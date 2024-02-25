@@ -8,7 +8,7 @@ import cv2
 CAM_NUM = 0 
 SHOW_IMAGE = True
 TIMER = 0.1
-QUE = 30
+QUE = 1
 #--------------------------------------------
 
 class CameraPublisherNode(Node):

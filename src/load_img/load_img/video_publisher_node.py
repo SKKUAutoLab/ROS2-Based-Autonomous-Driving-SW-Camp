@@ -11,7 +11,7 @@ VIDEO_PATH = get_path("2_record.mp4") # 현재 해당 경로에 비디오 파일
 REPEAT = False
 SHOW_IMAGE = True
 SPEED = 10
-QUE = 30
+QUE = 1
 #--------------------------------------------
 
 class VideoPublisherNode(Node):

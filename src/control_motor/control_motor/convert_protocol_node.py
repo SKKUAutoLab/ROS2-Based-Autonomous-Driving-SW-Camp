@@ -14,7 +14,7 @@ SUB_TOPIC_NAME = "topic_contol_signal"
 PUB_TOPIC_NAME = "topic_protocol_signal"
 
 TIMER = 0.1
-QUE = 10
+QUE = 1
 #--------------------------------------------
 
 class ConvertProtocol():

@@ -21,7 +21,7 @@ lane_width_pixel = 300
 target_point_detection_height = 90
 
 TIMER = 0.1
-QUE = 10
+QUE = 1
 #--------------------------------------------
 
 class ExtractInfo():

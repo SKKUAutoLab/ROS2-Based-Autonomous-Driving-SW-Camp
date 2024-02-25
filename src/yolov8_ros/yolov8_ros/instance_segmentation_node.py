@@ -4,6 +4,7 @@ import cv2
 import random
 import numpy as np
 from typing import List, Dict, Tuple
+import time
 
 import rclpy
 from rclpy.node import Node
@@ -85,6 +86,8 @@ class SegmentationNode(Node):
         
         self._class_to_color = {}
         
+        self.time_prev = time.time()
+        self.time_post = time.time()
             
     def parse_hypothesis(self, results: Results) -> List[Dict]:
         hypothesis_list = []
@@ -153,9 +156,6 @@ class SegmentationNode(Node):
         results = self.yolo.predict(source=cv_image, verbose=False, stream=False, conf=self.threshold, device=self.device)
         results: Results = results[0].cpu()
         
-        #result_plot = results[0].plot() # 추론 결과 전부 표시
-        #cv2.imshow("inference result", result_plot)
-        
         if results.boxes:
             hypothesis = self.parse_hypothesis(results) # id, class name, score
             boxes = self.parse_boxes(results)           # box x, y, size
@@ -192,22 +192,24 @@ class SegmentationNode(Node):
             color = self._class_to_color[label]
             label = aux_msg.class_name
             
-            #masking_inner = self.masking_result(copy_img, aux_msg.mask.data, color) # 영역 내부를 색칠 
             
             if label == 'lane2':
                 color = PINK
                 result_img = self.masking_result(black_img, aux_msg.mask.data, color) # 영역 외부는 검정
                     
-        #masking_inner = self.is_empty_img(cv_image, masking_inner) # 영역 내부를 색칠 
         masking_outer = self.is_empty_img(cv_image, result_img)
         
         detections_msg.header = msg.header
         self.pub_img.publish(self.cv_bridge.cv2_to_imgmsg(masking_outer, encoding=msg.encoding))
         self.pub_info.publish(detections_msg)
                                      
-        #cv2.imshow('inner_fill', masking_inner) # 영역 내부를 색칠 
-        cv2.imshow('outer_black', masking_outer)
+        cv2.imshow('masked_img', masking_outer)
         cv2.waitKey(1)
+
+        self.time_prev = self.time_post
+        self.time_post = time.time()
+        print('computation time for this frame: ', self.time_post - self.time_prev)
+
         
 def main(args=None):
     rclpy.init(args=args)

@@ -16,7 +16,7 @@ SUB_TOPIC_NAME = "topic_masking_img"
 PUB_TOPIC_NAME = "topic_postproc_img"
 
 TIMER = 0.1
-QUE = 10
+QUE = 1
 #--------------------------------------------
 
 class PostProcess():

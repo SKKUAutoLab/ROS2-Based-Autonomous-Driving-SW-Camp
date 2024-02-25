@@ -12,7 +12,7 @@ from load_img.lib import get_path
 IMAGE_DIRECTORY_PATH = get_path("Collected_Datasets")
 SHOW_IMAGE = True
 TIMER = 0.1
-QUE = 30
+QUE = 1
 #--------------------------------------------
 
 class ImagePublisherNode(Node):

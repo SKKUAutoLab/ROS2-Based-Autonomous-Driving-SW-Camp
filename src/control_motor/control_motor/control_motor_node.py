@@ -16,7 +16,7 @@ from .lib import convert_arduino_msg as PROTOCOL
 SUB_TOPIC_NAME = "topic_protocol_signal"
 
 TIMER = 0.1
-QUE = 10
+QUE = 1
 
 PORT='/dev/ttyACM0'
 
@@ -31,6 +31,7 @@ RIGHT_REAR_PIN2 = 5
 
 resistance_most_left = 433
 resistance_most_right = 309
+
 #--------------------------------------------
 
 ser = serial.Serial(PORT, 9600, timeout=1)

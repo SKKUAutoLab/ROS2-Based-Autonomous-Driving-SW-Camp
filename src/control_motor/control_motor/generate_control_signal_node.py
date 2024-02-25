@@ -52,17 +52,17 @@ SUB_TOPIC_NAME = "topic_lane_info"
 PUB_TOPIC_NAME = "topic_contol_signal"
 
 # 차량의 속도 (-255 ~ +255) , 음수면 후진, 양수면 전진
-SPEED = 40 
+SPEED = 50
 
 # 급격한 모터 속도 변화 완화(클수록 더욱 부드럽게 속도 변화)
 SPEED_CHANGE_SMOOTHNESS = 30
 
 # 차량 앞 범퍼의 중심이 위치한 픽셀의 좌표
 car_center_point_x = 280
-car_center_point_y = 479 
+car_center_point_y = 179
 
 TIMER = 0.1
-QUE = 10
+QUE = 1
 #--------------------------------------------
 
 class IntegrateInfo():
@@ -83,7 +83,7 @@ class IntegrateInfo():
    
     target_slope = CONTROL.calculate_slope_between_points(road_target_point, car_center_point)
 
-    ### Start (여기만 수정하세요)   
+    ## Start (여기만 수정하세요)   
     steering_command = 0
     
     # road gradient를 이용할 때 예시
@@ -96,7 +96,7 @@ class IntegrateInfo():
     else:
       steering_command = 7
 
-    ### END 
+    ## END 
     
     actual_left_speed_command = self.left_smooth_speed_controller.update_actual_speed(self.left_speed_command)
     actual_right_speed_command = self.right_smooth_speed_controller.update_actual_speed(self.right_speed_command)
@@ -142,6 +142,7 @@ class GenerateSignalNode(Node):
     motor.right_speed = right
     
     self.publisher_.publish(motor)
+
 
 def main(args=None):
     rclpy.init(args=args)

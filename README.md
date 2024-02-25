@@ -8,7 +8,7 @@ git clone https://github.com/SKKU-AutoLab-VSW/2023_Winter_Camp_Autodriving_SW ro
 
 cd ros2_ws
 rosdep install -i --from-path src --rosdistro humble -y
-colcon build
+colcon build --symlink-install
 
 source ./install/local_setup.bash
 ```

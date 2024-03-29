@@ -1,4 +1,4 @@
-## ROS2 기반 자율주행 SW종합설계
+## ROS2 기반 자율주행 SW종합설계 교육
 
 ### Initial Setting
 

@@ -17,7 +17,7 @@ pip install ultralytics
 #### Clone
 ```
 cd
-git clone https://github.com/SKKU-AutoLab-VSW/2023_Winter_Camp_Autodriving_SW ros2_ws
+git clone https://github.com/SKKU-AutoLab-VSW/ROS2-Based-Autonomous-Driving-SW-Camp.git
 cd ros2_ws
 ```
 

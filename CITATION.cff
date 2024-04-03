@@ -1,0 +1,41 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ROS2-Based-Autonomous-Driving-SW-Camp
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Hyeong-Keun
+    family-names: Hong
+    email: whaihong@g.skku.edu
+    orcid: 'https://orcid.org/0009-0007-4678-2019'
+    affiliation: Sungkyunkwan University
+  - given-names: Jin-Sun
+    family-names: Lee
+    email: withire32@kakao.com
+    affiliation: Sungkyunkwan University
+  - given-names: Si-Woo
+    family-names: Lee
+    email: lswlmk@gmail.com
+    affiliation: Sungkyunkwan University
+  - given-names: Yeong-Gwang
+    family-names: Choi
+    email: dudrhkd7811@naver.com
+    affiliation: Sungkyunkwan University
+  - email: adrbgus7080@gmail.com
+    affiliation: Sungkyunkwan University
+    given-names: Gyu-Hyeon
+    family-names: Hwang
+  - given-names: Eun-Ho
+    family-names: Kim
+    email: dmsghdmstj@g.skku.edu
+    affiliation: Sungkyunkwan University
+repository-code: >-
+  https://github.com/SKKUAutoLab/ROS2-Based-Autonomous-Driving-SW-Camp
+license: GPL-2.0
+commit: 5372e7a
+version: 1.0.2
+date-released: '2024-02-26'
